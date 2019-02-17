@@ -1,13 +1,6 @@
 language: go
-install: true
 sudo: required
-addons:
-  apt:
-    packages:
-      - rsyslog
-      - xmlsec1
-      - rpm
-# test stage automatically added for each go version
+
 go:
   - 1.11.x
   - master
