@@ -9,7 +9,7 @@ addons:
     update: true
 
 script:
-- make BuildMobile
+- make
 
 # after_success:
 # deploy:
