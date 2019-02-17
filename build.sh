@@ -14,7 +14,7 @@ fi
 
 build() {
 	echo "$1 $2 ..."
-	GOOS=$1 GOARCH=$2 go build \
+	GOOS=$1 GOARCH=$2 CGO_ENABLED=0 go build \
 		-ldflags "$LDFLAGS" \
 		-o dist/torrentfs-${3:-""}
 }
@@ -22,7 +22,7 @@ build() {
 go get github.com/anacrolix/utp
 # go-bindata-assetfs -tags bindata res/...
 
-# build linux arm linux-arm
+build linux arm linux-arm
 build darwin amd64 mac-amd64
 build linux amd64 linux-amd64
 build linux 386 linux-386
