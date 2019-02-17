@@ -2,6 +2,9 @@ language: go
 sudo: required
 go:
   - 1.11.x
+  
+env:
+  - GO111MODULE=off
 
 addons:
   apt:
