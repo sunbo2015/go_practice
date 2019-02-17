@@ -14,7 +14,7 @@ fi
 
 build() {
 	echo "$1 $2 ..."
-	GOOS=$1 GOARCH=$2 go build \
+	GOOS=$1 GOARCH=$2 go build -compiler gccgo\
 		-ldflags "$LDFLAGS" \
 		-o dist/torrentfs-${3:-""}
 }
