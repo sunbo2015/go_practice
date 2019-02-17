@@ -19,6 +19,7 @@ build() {
 		-o dist/torrentfs-${3:-""}
 }
 
+go get github.com/anacrolix/utp
 # go-bindata-assetfs -tags bindata res/...
 
 build linux arm linux-arm
