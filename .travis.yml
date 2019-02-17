@@ -9,7 +9,7 @@ addons:
     update: true
 
 script:
-- make
+  ./build.sh
 
 # after_success:
 # deploy:
