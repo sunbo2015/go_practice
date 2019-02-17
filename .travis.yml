@@ -4,7 +4,8 @@ go:
   - 1.11.x
   
 env:
-  - GO111MODULE=off
+  - GO111MODULE=on
+  - CGO_ENABLED=1 
 
 addons:
   apt:
