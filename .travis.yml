@@ -8,7 +8,7 @@ addons:
     update: true
 
 script:
-  ./build.sh
+  chmod +x build.sh && ./build.sh
 
 # after_success:
 # deploy:
