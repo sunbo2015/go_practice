@@ -2,7 +2,6 @@
 
 set -eu
 
-VERSION="0.0.1.beta"
 GITCOMMIT=$(git rev-parse HEAD)
 BUILDTIME=$(date -u +%Y/%m/%d-%H:%M:%S)
 
@@ -13,10 +12,10 @@ then
 fi
 
 build() {
-	echo "$1 $2 ..."
+	echo "build ${RELEASE}-${3:-""} for $1 $2 ..."
 	GOOS=$1 GOARCH=$2 go build \
 		-ldflags "$LDFLAGS" \
-		-o dist/torrentfs-${3:-""}
+		-o dist/${RELEASE}-${3:-""}
 }
 
 # go-bindata-assetfs -tags bindata res/...
