@@ -38,7 +38,7 @@ var (
 			if err != nil {
 				log.Fatal(err)
 			}
-			return filepath.Join(_user.HomeDir, ".config/transmission/torrents")
+			return filepath.Join(_user.HomeDir, ".torrent-fds")
 		}(),
 		ReadaheadBytes: 10 << 20,
 		ListenAddr:     &net.TCPAddr{},
