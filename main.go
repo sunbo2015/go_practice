@@ -18,6 +18,7 @@ import (
 	"github.com/anacrolix/tagflag"
 	"github.com/anacrolix/torrent"
 	"github.com/anacrolix/torrent/fs"
+	"github.com/anacrolix/torrent/storage"
 	"github.com/anacrolix/torrent/util/dirwatch"
 )
 
@@ -86,6 +87,14 @@ func mainExitCode() int {
 	defer conn.Close()
 	cfg := torrent.NewDefaultClientConfig()
 	cfg.DataDir = args.DownloadDir
+	if args.DownloadDir == "" {
+		tmpDir, err := ioutil.TempDir("/tmp/", "torrent-fds")
+		if err != nil {
+			log.Fatal(err)
+			return
+		}
+		cfg.DefaultStorage = storage.NewMMap(tmpDir)
+	}
 	cfg.DisableTrackers = args.DisableTrackers
 	cfg.NoUpload = true // Ensure that downloads are responsive.
 	cfg.SetListenAddr(args.ListenAddr.String())
