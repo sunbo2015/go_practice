@@ -92,7 +92,7 @@ func mainExitCode() int {
 		tmpDir, err := ioutil.TempDir("/tmp/", "torrent-fds")
 		if err != nil {
 			log.Fatal(err)
-			return
+			return 3
 		}
 		cfg.DefaultStorage = storage.NewMMap(tmpDir)
 	}
