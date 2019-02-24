@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"syscall"
 	"time"
+	"io/ioutil"
 
 	"bazil.org/fuse"
 	fusefs "bazil.org/fuse/fs"
