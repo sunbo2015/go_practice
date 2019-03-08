@@ -7,7 +7,7 @@ env:
   GO111MODULE=on
   CGO_ENABLED=0
   VERSION=0.0.1-beta
-  RELEASE=TorrentFDS
+  RELEASE=TorrentDFS
 
 cache:
   directories:
